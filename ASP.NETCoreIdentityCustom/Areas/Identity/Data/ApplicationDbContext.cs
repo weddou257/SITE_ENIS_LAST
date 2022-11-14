@@ -1,4 +1,5 @@
 ﻿using ASP.NETCoreIdentityCustom.Areas.Identity.Data;
+using ASP.NETCoreIdentityCustom.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -12,10 +13,15 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityR
         : base(options)
     {
     }
-
+    public DbSet<Students> Students { get; set; }
+    public DbSet<Teacher> Teacher { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        builder.Entity<Students>()
+          .ToTable("Students");
+        builder.Entity<Teacher>()
+          .ToTable("Teacher");
         // Customize the ASP.NET Identity model and override the defaults if needed.
         // For example, you can rename the ASP.NET Identity table names and more.
         // Add your customizations after calling base.OnModelCreating(builder);
