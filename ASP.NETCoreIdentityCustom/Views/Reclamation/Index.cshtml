@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ASP.NETCoreIdentityCustom.Models.reclamation>
+
+<button type="button" class="btn btn-primary"><a class="nav-link text-dark" asp-area="" asp-controller="Reclamation" asp-action="Index">Reclamation</a></button>
+<div class="container p-3">
+    
+
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Nom
+                    </th>
+
+                    <th>
+                        Adress
+                    </th>
+                    <th>
+                        text
+                    </th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model)
+                {
+                    <tr>
+                        <td width="10%">@obj.Id</td>
+                        <td width="20%">@obj.Nom</td>
+                        <td width="30%">@obj.adresse</td>
+                        <td width="40%">@obj.text</td>
+                        <td class="text-center">
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-route-Id="@obj.Id" asp-action="Edit" class="btn btn-primary mx-2">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a asp-route-Id="@obj.Id" asp-action="Delete" class="btn btn-danger mx-2">
+                                    <i class="far fa-trash-alt"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p> No Demande exists.</p>
+    }
+
+</div>

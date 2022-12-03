@@ -4,6 +4,7 @@ using ASP.NETCoreIdentityCustom.Areas.Identity.Data;
 using ASP.NETCoreIdentityCustom.Core;
 using ASP.NETCoreIdentityCustom.Core.Repositories;
 using ASP.NETCoreIdentityCustom.Repositories;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection");
@@ -17,6 +18,10 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<IFileProvider>(
+                new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(),
+                    "./ServerFiles")));
 
 #region Authorization
 

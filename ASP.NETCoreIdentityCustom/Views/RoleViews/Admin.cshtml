@@ -3,12 +3,11 @@
     ViewData["Title"] = "Admin Page";
 }
 <div class="text-center">
-    <h1 class="display-4">ESPACE TEACHER</h1>
+    <h2 class="display-4">ESPACE ADMINISTRATEUR</h2>
 </div>
 <nav class="navbar navbar-light bg-light">
-    <form class="form-inline">
-        <button class="btn btn-outline-success" type="button"> <a class="nav-link text-dark" asp-area="" asp-controller="Students" asp-action="Index">Students</a></button>
-        <button class="btn btn-outline-success" type="button">  <a class="nav-link text-dark" asp-area="" asp-controller="Teacher" asp-action="Index">Teacher</a></button>
-        <button class="btn btn-outline-success" type="button">  <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index">Users</a></button>
-    </form>
+     <form class="form-inline">
+    <button class="btn btn-outline-success" type="button">  <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index">Gestion Users</a></button>
+    <button class="btn btn-outline-success" type="button">  <a class="nav-link text-dark" asp-area="" asp-controller="Reclamation" asp-action="Index">Reclamation</a></button>
+     </form>
 </nav>

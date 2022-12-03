@@ -11,7 +11,7 @@ namespace ASP.NETCoreIdentityCustom.Controllers
             return View();
         }
 
-        [Authorize(Policy = Constants.Policies.RequireManager)]
+       [Authorize(Policy = Constants.Policies.RequireManager)]
         public IActionResult Manager()
         {
             return View();

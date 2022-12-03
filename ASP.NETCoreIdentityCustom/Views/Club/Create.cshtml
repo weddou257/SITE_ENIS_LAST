@@ -1,0 +1,42 @@
+﻿
+@model ASP.NETCoreIdentityCustom.Models.Clubs
+
+
+
+<div class="border p-3">
+    
+    <form method="post" asp-action="Create">
+        
+        <div>
+            <label for="nom" asp-for="Nom">Votre nom</label>
+            <input type="text" id="nom" name="nom" placeholder="Nom" required>
+        </div>
+        <div>
+            <label for="email" asp-for="email">Votre e-mail</label>
+            <input type="email" id="email" name="email" placeholder="email" required>
+        </div>
+        <div>
+            <label for="sujet" asp-for="specialite">Specialité</label>
+            <select name="sujet" id="sujet" required>
+                <option value="" disabled selected hidden>Choisissez votre specialite</option>
+                <option value="genieinfo">Genie Informatique</option>
+                <option value="genieelect">Genie Electrique</option>
+                <option value="genieelec">Genie electromecatique</option>
+                <option value="autre">Autre...</option>
+            </select>
+        </div>
+         <div>
+            <label for="sujet" asp-for="niveau">Niveau d'étude</label>
+            <select name="sujet" id="sujet" required>
+                <option value="" disabled selected hidden>Choisissez votre Niveau</option>
+                <option value="level1">G1</option>
+                <option value="level2">G2</option>
+                <option value="level3">G3</option>
+            </select>
+        </div>
+       
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>

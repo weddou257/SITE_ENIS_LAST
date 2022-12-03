@@ -1,19 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
+
 namespace ASP.NETCoreIdentityCustom.Models
 {
-    public class Students
+    public class reclamation
     {
-
         [Key]
         public int Id { get; set; }
         [Required]
         public string Nom { get; set; }
 
         [Required]
-        public string Prenom { get; set; }
-
         public string adresse { get; set; }
 
-        public IList<Club> Club { get; set; }
+        public string text { get; set; }
     }
 }

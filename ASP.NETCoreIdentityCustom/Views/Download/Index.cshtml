@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Core6_FileDownload.Models.FileModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>ESPACE TÉLÉCHARGEMENT</h1>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.FileName)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.FilePath)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td scope="row">
+                @Html.DisplayFor(modelItem => item.FileName)
+            </td>
+                <td scope="row">
+                 <a asp-action="DownloadFile"
+               asp-route-filename="@Url.Content(item.FileName)">
+               Download File
+            </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
